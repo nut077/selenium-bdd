@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.FileCopyUtils;
 
-import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -31,7 +30,7 @@ public class ScreenShotUtil {
   }
 
   @SneakyThrows
-  @PostConstruct
+  //@PostConstruct
   private void init() {
     for (int i = 0; i < 10; i++) {
       Thread.sleep(1000);

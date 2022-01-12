@@ -3,12 +3,14 @@ package com.github.nut077.seleniumbdd.googletest;
 import com.github.nut077.seleniumbdd.SpringBaseTestNGTest;
 import com.github.nut077.seleniumbdd.page.google.GooglePage;
 import com.github.nut077.seleniumbdd.util.ScreenShotUtil;
+import com.google.common.util.concurrent.Uninterruptibles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class GoogleTest extends SpringBaseTestNGTest {
 
@@ -23,6 +25,8 @@ public class GoogleTest extends SpringBaseTestNGTest {
   public void googleTest() throws IOException {
     googlePage.goTo();
     Assert.assertTrue(googlePage.isAt());
+
+    Uninterruptibles.sleepUninterruptibly(3, TimeUnit.SECONDS);
 
     googlePage.getSearchComponent().search("github/nut077");
     Assert.assertTrue(googlePage.getSearchResult().isAt());

@@ -1,13 +1,13 @@
 package com.github.nut077.seleniumbdd.page.google;
 
+import com.github.nut077.seleniumbdd.annotation.PageFragment;
 import com.github.nut077.seleniumbdd.page.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
+@PageFragment
 public class SearchComponent extends Base {
 
   @FindBy(name = "q")
@@ -19,9 +19,9 @@ public class SearchComponent extends Base {
   public void search(final String keyword) {
     searchBox.sendKeys(keyword);
     searchBtn.stream()
-        .filter(e -> e.isDisplayed() && e.isEnabled())
-        .findFirst()
-        .ifPresent(WebElement::click);
+      .filter(e -> e.isDisplayed() && e.isEnabled())
+      .findFirst()
+      .ifPresent(WebElement::click);
   }
 
   @Override

@@ -1,13 +1,13 @@
 package com.github.nut077.seleniumbdd.page.google;
 
+import com.github.nut077.seleniumbdd.annotation.Page;
 import com.github.nut077.seleniumbdd.page.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
+@Page
 public class SearchResult extends Base {
 
   @FindBy(css = "div.yuRUbf")

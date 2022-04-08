@@ -1,12 +1,12 @@
 package com.github.nut077.seleniumbdd.page.google;
 
+import com.github.nut077.seleniumbdd.annotation.Page;
 import com.github.nut077.seleniumbdd.page.Base;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
-@Component
+@Page
 @Getter
 @RequiredArgsConstructor
 public class GooglePage extends Base {

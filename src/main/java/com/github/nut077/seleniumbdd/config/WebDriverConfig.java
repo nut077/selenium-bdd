@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.Scope;
 
 @Profile("!remote")
 @Configuration
@@ -23,6 +24,7 @@ public class WebDriverConfig {
   }
 
   @Bean
+  @Scope("browserscope")
   //@ConditionalOnProperty(name = "browser", havingValue = "chrome")
   @ConditionalOnMissingBean // If not found bean it used this and must write code last line
   public WebDriver chromeDriver() {
